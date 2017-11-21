@@ -25,10 +25,12 @@ done
 cd $backup_dir
 
 	if [ "$ENV" = "testnet" ]; then
+cp /var/www/html/snapshots/testnet/latest /var/www/html/snapshots/testnet/latest.old
 cp lwf_testnet.gz $WWW/testnet/latest
 chmod 777 /var/www/html/snapshots/testnet/latest
 echo "[Done: BRANCH $ENV]"
 	elif [ "$ENV" = "main" ]; then
+cp /var/www/html/snapshots/mainnet/latest /var/www/html/snapshots/testnet/latest.old
 cp lwf_main.gz	$WWW/mainnet/latest
 chmod 777 /var/www/html/snapshots/mainnet/latest
 echo "[Done: BRANCH $ENV]"
