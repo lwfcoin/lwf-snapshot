@@ -12,7 +12,7 @@ backup_dir="/opt/backups"
 ENV="testnet"
 WWW="/var/www/html/snapshots"
 touch $logfile
-export PGPASSWORD=Explorer2017$
+export PGPASSWORD=YOURPWD
 timeslot=`date +%H-%M`
 databases=`psql -h localhost -U postgres -q -c "\l" | sed -n 4,/\eof/p | grep -v rows\) | awk {'print $1'} | grep -v "|" | grep -v template* | grep lwf`
 /bin/bash /opt/backups/lwf-node/lwf_manager.bash stop
